@@ -1,8 +1,12 @@
 .header {
   height: 80px;
-  background: gray;
+  background: var(--gray-800);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: aliceblue;
+  padding: 3rem 0;
+  gap: 1rem;  
+}
+.header img {
+  height: 2rem;
 }
