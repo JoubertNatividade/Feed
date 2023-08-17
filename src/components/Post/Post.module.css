@@ -70,6 +70,14 @@
   padding: 1rem;
   line-height: 1.4;
 }
+.commentForm footer {
+  visibility: hidden;
+  max-height: 0;
+}
+.commentForm:focus-within footer {
+  visibility: visible;
+  max-height: none;
+}
 .commentForm button {
   padding: 1rem;
   margin-top: 1rem;
@@ -84,3 +92,7 @@
 .commentForm button:hover{
   background-color: var(--green-300);
 }
+.commentList {
+  margin-top: 2rem;
+}
+

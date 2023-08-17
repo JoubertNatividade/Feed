@@ -1,3 +1,5 @@
+import { Avatar } from '../Avatar'
+import { Commnet } from '../Comment'
 import styles from './Post.module.css'
 
 export const Post = () => {
@@ -6,7 +8,7 @@ export const Post = () => {
     <div className={styles.post}>
       <header>  
         <div className={styles.profile}>
-          <img className={styles.avatar} src="https://github.com/JoubertNatividade.png" />
+          <Avatar src="https://github.com/JoubertNatividade.png"/>
           <div className={styles.avatarInfo}>
             <strong>Joubert Natividade</strong>
             <span>Developer Full Stack</span>
@@ -24,13 +26,18 @@ export const Post = () => {
       </div>
 
       <form className={styles.commentForm}>
-        <strong>Deixe seu comentário</strong>
+        <strong>Deixe um feedback</strong>
         <textarea 
-          placeholder='Deixe aqui seu comentário...'
+          placeholder='Deixe um comentário...'
         />
-        <button> Comentar</button>
+        <footer>
+          <button> Comentar</button>
+        </footer>
       </form>
-
+      <div className={styles.commentList}>
+        <Commnet />
+        <Commnet />
+      </div>
     </div>
 
   )
