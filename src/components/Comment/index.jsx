@@ -5,7 +5,7 @@ import {AiOutlineLike } from 'react-icons/ai'
 import styles from "./Commnet.module.css"
 
 
-export const Commnet = () => {
+export const Commnet = ({content}) => {
   return (
     <div className={styles.commnet}> 
       <Avatar src="https://github.com/JoubertNatividade.png" />
@@ -19,7 +19,7 @@ export const Commnet = () => {
             <button><BiTrash  size={20}/></button>
           </header>
 
-          <p>Comentário 01</p>
+          <p> {content} </p>
         </div>
         <footer>
           <button>
