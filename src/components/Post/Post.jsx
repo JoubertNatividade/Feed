@@ -20,7 +20,6 @@ export const Post = ({  author,  content,publishedAt }) => {
   const handleNewCommentChange = () => {
     setComments(event.target.value)
   }
-
   const publisheAtFormated = format(publishedAt,"d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR
   });
@@ -28,6 +27,11 @@ export const Post = ({  author,  content,publishedAt }) => {
     addSuffix: true,
     locale: ptBR
   })
+
+  const handleDeleteCommnet = (commnetDelete) => {
+    const newListWithouCommentDelete = listCommnets.filter(comment => comment !== commnetDelete)
+    setListComments(newListWithouCommentDelete)
+  }
   return (
     <div className={styles.post}>
       <header>  
@@ -67,7 +71,11 @@ export const Post = ({  author,  content,publishedAt }) => {
       <div className={styles.commentList}>
         {
           listCommnets.map((commnet) => (
-            <Commnet key={commnet} content={commnet} />
+            <Commnet 
+              key={commnet} 
+              onDeleteComment={handleDeleteCommnet} 
+              content={commnet} 
+            />
           ))
         }
       </div>

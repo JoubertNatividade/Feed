@@ -5,7 +5,12 @@ import {AiOutlineLike } from 'react-icons/ai'
 import styles from "./Commnet.module.css"
 
 
-export const Commnet = ({content}) => {
+export const Commnet = ({content, onDeleteComment}) => {
+
+  const handleDeleteComment = () => {
+    onDeleteComment(content)
+  }
+
   return (
     <div className={styles.commnet}> 
       <Avatar src="https://github.com/JoubertNatividade.png" />
@@ -16,7 +21,7 @@ export const Commnet = ({content}) => {
               <strong>Joubert</strong>
               <time>cerca de 2hr</time>
             </div>
-            <button><BiTrash  size={20}/></button>
+            <button onClick={handleDeleteComment} ><BiTrash size={24}/></button>
           </header>
 
           <p> {content} </p>
